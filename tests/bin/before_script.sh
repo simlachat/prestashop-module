@@ -12,7 +12,7 @@ if [ -z $BRANCH ]; then
 	if [ -f "tests/parameters.yml.travis" ]; then
 	    cp tests/parameters.yml.travis app/config/parameters.yml
     else
-        cp tests-legasy/parameters.yml.travis app/config/parameters.yml
+        cp tests-legacy/parameters.yml.travis app/config/parameters.yml
     fi
 
     bash travis-scripts/install-prestashop
