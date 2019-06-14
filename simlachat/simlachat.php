@@ -160,7 +160,7 @@ class Simlachat extends Module
         $this->context->controller->addJS($assetsBase . '/js/simlachat-upload.js');
         $this->display(__FILE__, 'simlachat.tpl');
 
-        return $output . $this->displaySettingsForm() . $this->displayUploadOrdersForm();
+        return $output . $this->displaySettingsForm() . $this->displayUploadCustomersForm();
     }
 
     public function displaySettingsForm()
@@ -224,7 +224,7 @@ class Simlachat extends Module
             'input' => array(
                 array(
                     'type' => 'textarea',
-                    'label' => $this->l('Embed code on site pages'),
+                    'label' => $this->l('Code for inserting into the site pages'),
                     'name' => static::CONSULTANT_SCRIPT,
                     'required' => true
                 )
@@ -274,14 +274,14 @@ class Simlachat extends Module
         return $helper->generateForm($fields_form);
     }
 
-    public function displayUploadOrdersForm()
+    public function displayUploadCustomersForm()
     {
         $default_lang = $this->default_lang;
         $fields_form = array();
 
         if ($this->api) {
             $fields_form[]['form'] = array(
-                'legend' => array('title' => $this->l('Manual customers upload')),
+                'legend' => array('title' => $this->l('Manual export of customers')),
                 'input' => array(
                     array(
                         'type' => 'text',
