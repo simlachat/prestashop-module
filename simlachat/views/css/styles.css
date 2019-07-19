@@ -1,0 +1,631 @@
+@font-face
+{
+    font-family: 'OpenSans';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/OpenSans/opensans-regular.eot');
+    src: url('../fonts/OpenSans/opensans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans/opensans-regular.woff2') format('woff2'), url('../fonts/OpenSans/opensans-regular.woff') format('woff'), url('../fonts/OpenSans/opensans-regular.ttf') format('truetype'), url('../fonts/OpenSans/opensans-regular.svg#open_sansregular') format('svg');
+}
+@font-face
+{
+    font-family: 'OpenSans';
+    font-weight: 600;
+    font-style: normal;
+
+    src: url('../fonts/OpenSansBold/opensans-bold.eot');
+    src: url('../fonts/OpenSansBold/opensans-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSansBold/opensans-bold.woff2') format('woff2'), url('../fonts/OpenSansBold/opensans-bold.woff') format('woff'), url('../fonts/OpenSansBold/opensans-bold.ttf') format('truetype'), url('../fonts/OpenSansBold/opensans-bold.svg#open_sansbold') format('svg');
+}
+body,
+html
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.simla-wrap
+{
+    font-family: OpenSans, Arial, sans-serif;
+
+    height: 100%;
+    padding: 0 15px;
+}
+.simla-wrap *,
+.simla-wrap *::before,
+.simla-wrap *::after
+{
+    box-sizing: border-box;
+}
+.simla-container
+{
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+.simla-title
+{
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 38px;
+
+    margin: 60px 0 0;
+
+    text-align: center;
+}
+.simla-title_content
+{
+    margin-top: 40px;
+
+    text-align: left;
+}
+.simla-txt
+{
+    font-size: 18px;
+    line-height: 26px;
+
+    color: #7a7a7a;
+}
+.simla-descript
+{
+    margin-top: 45px;
+
+    text-align: center;
+}
+.simla-video
+{
+    position: relative;
+
+    max-width: 442px;
+    margin: 57px auto 0;
+
+    background: #147df7;
+}
+.simla-video__btn
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+    cursor: pointer;
+    transition: .25s ease;
+
+    opacity: .2;
+}
+.simla-video__btn svg
+{
+    width: 100%;
+}
+.simla-video__btn:hover
+{
+    opacity: .6;
+}
+.simla-btns
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    max-width: 815px;
+    margin: 56px auto 0;
+
+    transition: .05s ease;
+
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.simla-btns__separate
+{
+    font-size: 16px;
+
+    display: -ms-flexbox;
+    display: flex;
+
+    padding: 0 20px;
+
+    color: #7a7a7a;
+
+    -ms-flex-align: center;
+    align-items: center;
+}
+.simla-btns_hide
+{
+    opacity: 0;
+}
+.simla-form
+{
+    margin-top: 60px;
+}
+.simla-form__title
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    margin-bottom: 22px;
+}
+.simla-form__row
+{
+    margin-top: 15px;
+}
+.simla-form__row_submit
+{
+    margin-top: 23px;
+}
+textarea.simla-form__area, input[type="text"].simla-form__area
+{
+    font-size: 16px;
+    line-height: normal;
+
+    display: inline-block;
+
+    width: 430px;
+    height: 60px;
+    padding: 0 28px;
+
+    vertical-align: top;
+
+    color: #7a7a7a;
+    border: 1px solid rgba(122, 122, 122, .15);
+    border-radius: 58px;
+    box-shadow: none;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+textarea.simla-form__area:focus, input[type="text"].simla-form__area:focus
+{
+    color: #363a41;
+}
+textarea.simla-form__area:focus::-webkit-input-placeholder, input[type="text"].simla-form__area:focus::-webkit-input-placeholder
+{
+    color: #363a41;
+}
+textarea.simla-form__area:focus::-moz-placeholder, input[type="text"].simla-form__area:focus::-moz-placeholder
+{
+    color: #363a41;
+}
+textarea.simla-form__area:focus:-moz-placeholder, input[type="text"].simla-form__area:focus:-moz-placeholder
+{
+    color: #363a41;
+}
+textarea.simla-form__area:focus:-ms-input-placeholder, input[type="text"].simla-form__area:focus:-ms-input-placeholder
+{
+    color: #363a41;
+}
+textarea.simla-form__area_txt
+{
+    font-family: OpenSans, Arial, sans-serif;
+    line-height: 24px;
+
+    height: 487px;
+    padding: 20px 28px;
+
+    resize: none;
+
+    border-radius: 20px;
+}
+.simla-form input:focus,
+.simla-form textarea:focus
+{
+    outline: none;
+}
+.simla-form_main
+{
+    width: 100%;
+    max-width: 900px;
+    margin-top: 34px;
+}
+.simla-form_main .simla-form__area
+{
+    width: 100%;
+}
+.simla-tabs
+{
+    margin-top: 60px;
+}
+.simla-tabs__btn
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+
+    position: relative;
+
+    display: inline-block;
+
+    min-width: 152px;
+    padding: 19px 30px;
+
+    transition: .25s ease;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+
+    color: #7a7a7a;
+}
+.simla-tabs__btn:hover
+{
+    color: #363a41;
+}
+.simla-tabs__btn::after
+{
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+
+    visibility: hidden;
+
+    width: 100%;
+    height: 3px;
+
+    content: '';
+    transition: .25s ease;
+
+    opacity: 0;
+    background: #147df7;
+}
+.simla-tabs__btn_active
+{
+    color: #363a41;
+}
+.simla-tabs__btn_active::after
+{
+    visibility: visible;
+
+    opacity: 1;
+}
+.simla-tabs__head
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    border-bottom: 1px solid #dfdfdf;
+
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.simla-tabs__body
+{
+    padding-top: 18px;
+}
+.simla-tabs__body p
+{
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-top: 23px;
+    margin-bottom: 0;
+
+    color: #7a7a7a;
+}
+.simla-tabs__item
+{
+    display: none;
+}
+.simla-list
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.simla-list__item
+{
+    font-size: 16px;
+    line-height: 24px;
+
+    position: relative;
+
+    padding-left: 2px;
+
+    color: #7a7a7a;
+}
+.simla-list__item::before
+{
+    font-size: 16px;
+    line-height: 24px;
+
+    display: inline-block;
+
+    margin-right: 3px;
+
+    content: '-';
+    vertical-align: top;
+
+    color: #7a7a7a;
+}
+.simla-tile
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.simla-tile__col
+{
+    width: 48%;
+    padding-right: 35px;
+}
+.simla-tile__col:nth-child(1)
+{
+    width: 52%;
+}
+.simla-tile__col_contacts
+{
+    padding-right: 0;
+}
+.simla-tile__row
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-bottom: 30px;
+
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.simla-tile__row:nth-last-child(1)
+{
+    margin-bottom: 0;
+}
+.simla-tile__item
+{
+    margin-top: 34px;
+}
+.simla-tile__item:nth-child(1)
+{
+    margin-top: 20px;
+}
+.simla-tile__title
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    color: #363a41;
+}
+.simla-tile__descript
+{
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-top: 10px;
+
+    color: #7a7a7a;
+}
+.simla-tile__link
+{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    transition: .25s ease;
+
+    color: #147df7;
+}
+.simla-tile__link:hover
+{
+    color: #0671ed;
+}
+.simla-popup
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 90%;
+    height: 90%;
+    margin: auto;
+
+    transition: .25s ease;
+    transform: translate3d(0, -1000%, 0) scale(.1);
+
+    background: white;
+}
+.simla-popup__close
+{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+}
+.simla-popup__close::before,
+.simla-popup__close::after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 2px;
+    height: 30px;
+    margin: auto;
+
+    content: '';
+
+    background: white;
+}
+.simla-popup__close::before
+{
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+}
+.simla-popup__close::after
+{
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+}
+.simla-popup.open
+{
+    transform: translate3d(0, 0, 0) scale(1);
+}
+.simla-popup-wrap
+{
+    position: fixed;
+    z-index: 1000;
+    top: 36px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+
+    background: rgba(0, 0, 0, .6);
+}
+.simla-column
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    max-width: 1389px;
+    height: 100%;
+}
+.simla-column__aside
+{
+    padding-top: 20px;
+    width: 253px;
+    min-height: 300px;
+
+    background: #eaebec;
+}
+.simla-column__content
+{
+    min-height: 300px;
+    padding: 0 58px;
+
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+}
+.simla-menu
+{
+    padding: 0 20px 0 15px;
+}
+a.simla-menu__btn
+{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 60px;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    padding: 0 30px;
+
+    transition: .25s ease;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+
+    color: #363a41;
+    border-radius: 5px;
+    background: rgba(122, 122, 122, .1);
+}
+a.simla-menu__btn:hover
+{
+    text-decoration: none;
+    color: black;
+    background: rgba(122, 122, 122, .15);
+}
+a.simla-menu__btn:nth-child(1)
+{
+    margin-top: 0;
+}
+a.simla-menu__btn_active
+{
+    color: white;
+    background: #147df7;
+}
+a.simla-menu__btn_active:hover
+{
+    text-decoration: none;
+    color: white;
+    background: #0671ed;
+}
+a.simla-menu__btn_big
+{
+    font-size: 18px;
+}
+.simla-full-height
+{
+    height: 100%;
+}
+.simla .btn
+{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 60px;
+
+    display: inline-block;
+
+    height: 60px;
+    padding: 0 30px;
+
+    cursor: pointer;
+    transition: .25s ease;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+
+    color: #147df7;
+    border: none;
+    border-radius: 58px;
+    background: rgba(122, 122, 122, .1);
+    box-shadow: none;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+.simla .btn:hover
+{
+    background: rgba(122, 122, 122, .15);
+}
+.simla .btn_max
+{
+    min-width: 356px;
+}
+.simla .btn_invert
+{
+    color: white;
+    background: #147df7;
+}
+.simla .btn_invert:hover
+{
+    background: #0671ed;
+}
+.simla .btn_whatsapp
+{
+    padding: 0 62px;
+
+    color: white;
+    background: #33d16b;
+}
+.simla .btn_whatsapp:hover
+{
+    background: #22ca5d;
+}
+.simla .btn_submit
+{
+    min-width: 218px;
+}
+.simla .toggle-box
+{
+    display: none;
+}
