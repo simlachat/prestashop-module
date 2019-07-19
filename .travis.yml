@@ -1,6 +1,13 @@
 language: php
 
-sudo: false
+addons:
+  apt:
+    packages:
+      - apache2
+      - libapache2-mod-fastcgi
+
+sudo: required
+dist: trusty
 
 services:
   - mysql
@@ -18,6 +25,7 @@ matrix:
 
 before_script:
   - bash tests/bin/clone_prestashop.sh
+  - bash tests/bin/setup_apache.sh
   - bash tests/bin/before_script.sh
 
 script:

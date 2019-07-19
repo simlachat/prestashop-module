@@ -107,60 +107,37 @@ class Simlachat extends Module
 
     public function getContent()
     {
-        $output = null;
+        $output = '';
         $url = Configuration::get(static::URL);
         $apiKey = Configuration::get(static::API_KEY);
+        $apiVersion = static::LATEST_API_VERSION;
 
         if (Tools::isSubmit('submit' . $this->name)) {
             $customersIds = (string) Tools::getValue(static::UPLOAD_CUSTOMERS_IDS);
 
             if (!empty($customersIds)) {
-                $output .= $this->uploadCustomers(SimlachatUtils::partitionId($customersIds));
+                $this->uploadCustomers(SimlachatUtils::partitionId($customersIds));
             } else {
-                $url = (string) Tools::getValue(static::URL);
-                $apiKey = (string) Tools::getValue(static::API_KEY);
-                $consultantCode = (string) Tools::getValue(static::CONSULTANT_SCRIPT);
-                $apiVersion = (string) Tools::getValue(static::API_VERSION);
-
-                $settings  = array(
-                    'url' => $url,
-                    'apiKey' => $apiKey
-                );
-
-                $output .= $this->validateForm($settings, $output);
-
-                if ($output === '') {
-                    Configuration::updateValue(static::URL, $url);
-                    Configuration::updateValue(static::API_KEY, $apiKey);
-                    Configuration::updateValue(static::API_VERSION, $apiVersion);
-                    Configuration::updateValue(static::CONSULTANT_SCRIPT, $consultantCode, true);
-
-                    $output .= $this->displayConfirmation($this->l('Settings updated'));
-                }
+                $output .= $this->saveSettings();
             }
+
+            Configuration::updateValue(static::API_VERSION, $apiVersion);
         }
 
         if ($url && $apiKey) {
             $this->api = new SimlachatProxy($url, $apiKey, $this->log, $this->apiVersion);
         }
 
-        $output .= $this->displayConfirmation(
-            $this->l('Timezone settings must be identical to both of your SimlaChat and shop') .
-            "<a target=\"_blank\" href=\"$url/admin/settings#t-main\">$url/admin/settings#t-main</a>"
+        $assetsBase = sprintf(
+            "%s%smodules/%s/views",
+            Tools::getShopDomainSsl(true, true),
+            __PS_BASE_URI__,
+            $this->name
         );
 
-        $assetsBase =
-            Tools::getShopDomainSsl(true, true) .
-            __PS_BASE_URI__ .
-            'modules/' .
-            $this->name .
-            '/views';
+        $templateFactory = new SimlachatTemplateFactory($this->context->smarty, $assetsBase);
 
-        $this->context->controller->addCSS($assetsBase . '/css/simlachat-upload.css');
-        $this->context->controller->addJS($assetsBase . '/js/simlachat-upload.js');
-        $this->display(__FILE__, 'simlachat.tpl');
-
-        return $output . $this->displaySettingsForm() . $this->displayUploadCustomersForm();
+        return $templateFactory->createTemplate($this)->setErrors($output)->render(__FILE__);
     }
 
     public function displaySettingsForm()
@@ -429,6 +406,34 @@ class Simlachat extends Module
             $output .= $this->displayError($this->l('Invalid or empty SimlaChat API key'));
         } elseif (!$this->validateApiVersion($settings)) {
             $output .= $this->displayError($this->l('The selected version of the API is unavailable'));
+        }
+
+        return $output;
+    }
+
+    private function saveSettings()
+    {
+        $output = '';
+        $url = (string) Tools::getValue(static::URL);
+        $apiKey = (string) Tools::getValue(static::API_KEY);
+        $consultantCode = (string) Tools::getValue(static::CONSULTANT_SCRIPT);
+
+        if (!empty($url) && !empty($apiKey)) {
+            $settings  = array(
+                'url' => $url,
+                'apiKey' => $apiKey
+            );
+
+            $output .= $this->validateForm($settings, $output);
+
+            if ($output === '') {
+                Configuration::updateValue(static::URL, $url);
+                Configuration::updateValue(static::API_KEY, $apiKey);
+            }
+        }
+
+        if (!empty($consultantCode)) {
+            Configuration::updateValue(static::CONSULTANT_SCRIPT, $consultantCode, true);
         }
 
         return $output;
