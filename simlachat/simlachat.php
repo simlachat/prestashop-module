@@ -56,7 +56,7 @@ class Simlachat extends Module
         $this->ps_versions_compliancy = array('min' => '1.6', 'max' => _PS_VERSION_);
         $this->psVersion = Tools::substr(_PS_VERSION_, 0, 3);
         $this->log = SimlachatUtils::getLogDir();
-        $this->module_key = '5caedc941e8a502fbdb70bd442a04d24';
+        $this->module_key = '39d1412f144a88973837e5ea49167c9d';
 
         if ($this->psVersion == '1.6') {
             $this->bootstrap = true;
