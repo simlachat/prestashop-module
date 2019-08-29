@@ -10,10 +10,10 @@
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 * copies of the Software, and to permit persons to whom the Software is
 * furnished to do so, subject to the following conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be included in
 * all copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -35,6 +35,7 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 */
+
 if (function_exists('date_default_timezone_set') && function_exists('date_default_timezone_get')) {
     date_default_timezone_set(@date_default_timezone_get());
 }
@@ -71,7 +72,7 @@ class Simlachat extends Module
     {
         $this->name = 'simlachat';
         $this->tab = 'export';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'DIGITAL RETAIL TECHNOLOGIES SL';
         $this->displayName = $this->l('SimlaChat');
         $this->description = $this->l('Integration module for SimlaChat');
