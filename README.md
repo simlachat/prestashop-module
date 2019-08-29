@@ -10,6 +10,7 @@ Module allows integrate CMS Prestashop with [SimlaChat](http://simlachat.com)
 #### Features:
 
 * Export customers to SimlaChat
+* Integrated online-chat for your website
 
 #### Setup
 
