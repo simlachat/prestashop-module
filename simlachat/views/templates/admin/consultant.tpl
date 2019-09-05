@@ -9,10 +9,10 @@
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 * copies of the Software, and to permit persons to whom the Software is
 * furnished to do so, subject to the following conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be included in
 * all copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -43,8 +43,8 @@
     <div class="simla-container simla-column">
         <aside class="simla-column__aside">
             <div class="simla-menu">
-                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat" class="simla-menu__btn simla-menu__btn_big">Configuraciones</a>
-                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat&item=consultant" class="simla-menu__btn simla-menu__btn_active">Consultor en línea</a>
+                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat" class="simla-menu__btn simla-menu__btn_big">{l s='Configuration' mod='simlachat'}</a>
+                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat&item=consultant" class="simla-menu__btn simla-menu__btn_active">{l s='Online consultant' mod='simlachat'}</a>
             </div>
         </aside>
         <article class="simla-column__content">
@@ -52,14 +52,14 @@
             <div class="simla-form simla-form_main">
                 <form action="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat&item=consultant" method="post">
                     <input type="hidden" name="submitsimlachat" value="1" />
-                    <div class="simla-form__title">Consultor en linea</div>
+                    <div class="simla-form__title">{l s='Online consultant' mod='simlachat'}</div>
                     <div class="simla-form__row">
-                        <textarea required name="{$consultantScriptName}" class="simla-form__area simla-form__area_txt" id="simla-txt-area" placeholder="Código que necesita insertar en la web">
+                        <textarea required name="{$consultantScriptName}" class="simla-form__area simla-form__area_txt" id="simla-txt-area" placeholder="{l s='Code you need to insert on the web' mod='simlachat'}">
                             {$consultantScript}
                         </textarea>
                     </div>
                     <div class="simla-form__row simla-form__row_submit">
-                        <input type="submit" value="Guardar" class="btn btn_invert btn_submit">
+                        <input type="submit" value="{l s='Save' mod='simlachat'}" class="btn btn_invert btn_submit">
                     </div>
                 </form>
             </div>

@@ -9,10 +9,10 @@
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 * copies of the Software, and to permit persons to whom the Software is
 * furnished to do so, subject to the following conditions:
-* 
+*
 * The above copyright notice and this permission notice shall be included in
 * all copies or substantial portions of the Software.
-* 
+*
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -44,8 +44,8 @@
     <div class="simla-container simla-column">
         <aside class="simla-column__aside">
             <div class="simla-menu">
-                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat" class="simla-menu__btn simla-menu__btn_big simla-menu__btn_active">Configuraciones</a>
-                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat&item=consultant" class="simla-menu__btn">Consultor en línea</a>
+                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat" class="simla-menu__btn simla-menu__btn_big simla-menu__btn_active">{l s='Configuration' mod='simlachat'}</a>
+                <a href="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat&item=consultant" class="simla-menu__btn">{l s='Online consultant' mod='simlachat'}</a>
             </div>
         </aside>
         <article class="simla-column__content">
@@ -53,15 +53,15 @@
             <div class="simla-form simla-form_main">
                 <form action="{$current|escape:'htmlall':'UTF-8'}&amp;token={$token|escape:'htmlall':'UTF-8'}&amp;configure=simlachat" method="post">
                     <input type="hidden" name="submitsimlachat" value="1" />
-                    <div class="simla-form__title">Configuración de la conexión</div>
+                    <div class="simla-form__title">{l s='Connection Settings' mod='simlachat'}</div>
                     <div class="simla-form__row">
-                        <input required type="text" name="{$apiUrlName}" value="{$apiUrl}" class="simla-form__area" placeholder="URL de SimlaChat">
+                        <input required type="text" name="{$apiUrlName}" value="{$apiUrl}" class="simla-form__area" placeholder="{l s='SimlaChat URL' mod='simlachat'}">
                     </div>
                     <div class="simla-form__row">
-                        <input required type="text" name="{$apiKeyName}" value="{$apiKey}" class="simla-form__area" placeholder="Accesos API SimlaChat">
+                        <input required type="text" name="{$apiKeyName}" value="{$apiKey}" class="simla-form__area" placeholder="{l s='API key' mod='simlachat'}">
                     </div>
                     <div class="simla-form__row simla-form__row_submit">
-                        <input type="submit" value="Guardar" class="btn btn_invert btn_submit">
+                        <input type="submit" value="{l s='Save' mod='simlachat'}" class="btn btn_invert btn_submit">
                     </div>
                 </form>
             </div>
