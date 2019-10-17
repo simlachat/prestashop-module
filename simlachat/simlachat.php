@@ -72,7 +72,7 @@ class Simlachat extends Module
     {
         $this->name = 'simlachat';
         $this->tab = 'export';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'DIGITAL RETAIL TECHNOLOGIES SL';
         $this->displayName = $this->l('SimlaChat');
         $this->description = $this->l('Integration module for SimlaChat');

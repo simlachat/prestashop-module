@@ -36,6 +36,10 @@
 * to avoid any conflicts with others containers.
 */
 
+if(php_sapi_name() != "cli") {
+    exit("This script must be used in CLI mode only");
+}
+
 $_SERVER['HTTPS'] = 1;
 
 require(dirname(__FILE__) . '/../../../config/config.inc.php');

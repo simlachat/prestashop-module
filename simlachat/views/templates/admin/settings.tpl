@@ -34,11 +34,11 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 *}
-{$errors}
+{$errors|escape:'htmlall':'UTF-8'}
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{$assets}/css/styles.min.css">
+<link rel="stylesheet" href="{$assets|escape:'htmlall':'UTF-8'}/css/styles.min.css">
 <title>SimlaChat</title>
 <div class="simla simla-wrap">
     <div class="simla-container simla-column">
@@ -55,10 +55,10 @@
                     <input type="hidden" name="submitsimlachat" value="1" />
                     <div class="simla-form__title">{l s='Connection Settings' mod='simlachat'}</div>
                     <div class="simla-form__row">
-                        <input required type="text" name="{$apiUrlName}" value="{$apiUrl}" class="simla-form__area" placeholder="{l s='SimlaChat URL' mod='simlachat'}">
+                        <input required type="text" name="{$apiUrlName|escape:'htmlall':'UTF-8'}" value="{$apiUrl|escape:'htmlall':'UTF-8'}" class="simla-form__area" placeholder="{l s='SimlaChat URL' mod='simlachat'}">
                     </div>
                     <div class="simla-form__row">
-                        <input required type="text" name="{$apiKeyName}" value="{$apiKey}" class="simla-form__area" placeholder="{l s='API key' mod='simlachat'}">
+                        <input required type="text" name="{$apiKeyName|escape:'htmlall':'UTF-8'}" value="{$apiKey|escape:'htmlall':'UTF-8'}" class="simla-form__area" placeholder="{l s='API key' mod='simlachat'}">
                     </div>
                     <div class="simla-form__row simla-form__row_submit">
                         <input type="submit" value="{l s='Save' mod='simlachat'}" class="btn btn_invert btn_submit">
@@ -71,4 +71,4 @@
 </div>
 {*<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>*}
 {*<script>window.jQuery || document.write('<script src="{$assets}/js/vendor/jquery-3.4.0.min.js"><\/script>')</script>*}
-<script src="{$assets}/js/scripts.js"></script>
+<script src="{$assets|escape:'htmlall':'UTF-8'}/js/scripts.js"></script>
