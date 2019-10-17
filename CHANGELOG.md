@@ -1,3 +1,9 @@
+## v1.0.4
+* Restiction for CLI script
+
+## v1.0.3
+* Update escaping into templates
+
 ## v1.0.2
 * Translations for templates
 

@@ -34,11 +34,11 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 *}
-{$errors}
+{$errors|escape:'htmlall':'UTF-8'}
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{$assets}/css/styles.min.css">
+<link rel="stylesheet" href="{$assets|escape:'htmlall':'UTF-8'}/css/styles.min.css">
 <title>SimlaChat</title>
 <div class="simla simla-wrap">
     <div class="simla-container">
@@ -47,7 +47,7 @@
             {l s='Solution to convert more sales opportunities through web chat and Facebook Messenger, available 24/7, even when you\'re not online.' mod='simlachat'}
         </div>
         <div class="simla-video">
-            <img src="{$assets}/img/video-bg.png" alt="" />
+            <img src="{$assets|escape:'htmlall':'UTF-8'}/img/video-bg.png" alt="" />
             <div class="simla-video__btn" data-popup="#video-popup">
                 <svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50.7188 0.46875C59.5897 0.46875 68.0575 2.8881 75.7188 7.32359C83.38 11.7591 89.4284 17.8075 93.8639 25.4688C98.2994 33.13 100.719 41.5978 100.719 50.4688C100.719 59.5413 98.2994 67.8075 93.8639 75.4688C89.4284 83.13 83.38 89.38 75.7188 93.8155C68.0575 98.251 59.5897 100.469 50.7188 100.469C41.6462 100.469 33.38 98.251 25.7188 93.8155C18.0575 89.38 11.8075 83.13 7.37198 75.4688C2.93649 67.8075 0.71875 59.5413 0.71875 50.4688C0.71875 41.5978 2.93649 33.13 7.37198 25.4688C11.8075 17.8075 18.0575 11.7591 25.7188 7.32359C33.38 2.8881 41.6462 0.46875 50.7188 0.46875ZM74.1059 55.3075C75.7188 54.501 76.5252 53.0897 76.5252 51.0736C76.5252 49.2591 75.7188 47.8478 74.1059 46.8397L38.622 25.2671C37.0091 24.4607 35.3962 24.4607 33.7833 25.2671C32.1704 26.2752 31.3639 27.6865 31.3639 29.501V71.4365C31.3639 73.4526 32.1704 74.8639 33.7833 75.6704C35.3962 76.6784 37.0091 76.6784 38.622 75.6704L74.1059 55.3075Z" fill="black"/>
@@ -64,10 +64,10 @@
                 <input type="hidden" name="submitsimlachat" value="1" />
                 <div class="simla-form__title">{l s='Connection Settings' mod='simlachat'}</div>
                 <div class="simla-form__row">
-                    <input required type="text" class="simla-form__area" placeholder="{l s='SimlaChat URL' mod='simlachat'}" name="{$apiUrl}">
+                    <input required type="text" class="simla-form__area" placeholder="{l s='SimlaChat URL' mod='simlachat'}" name="{$apiUrl|escape:'htmlall':'UTF-8'}">
                 </div>
                 <div class="simla-form__row">
-                    <input required type="text" class="simla-form__area" placeholder="{l s='API key' mod='simlachat'}" name="{$apiKey}">
+                    <input required type="text" class="simla-form__area" placeholder="{l s='API key' mod='simlachat'}" name="{$apiKey|escape:'htmlall':'UTF-8'  }">
                 </div>
                 <div class="simla-form__row simla-form__row_submit">
                     <input type="submit" value="{l s='Save' mod='simlachat'}" class="btn btn_invert btn_submit">
@@ -179,4 +179,4 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 {*<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>*}
 {*<script>window.jQuery || document.write('<script src="{$assets}/js/vendor/jquery-3.4.0.min.js"><\/script>')</script>*}
-<script src="{$assets}/js/scripts.js"></script>
+<script src="{$assets|escape:'htmlall':'UTF-8'}/js/scripts.js"></script>
